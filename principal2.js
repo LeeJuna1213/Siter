@@ -11,12 +11,22 @@ const initialH2 = bannerH2.innerHTML;
 let timeout;
 
 // Função para alternar as imagens com efeito de fade
-function changeBanner(newImage, newH1, newH2) {
+function changeBanner(newImage, newH1, newH2, n) {
     // Adiciona a classe `active` para a transição de entrada
     bannerImage.classList.add("active");
     bannerImage.src = newImage;
     bannerH1.innerHTML = newH1;
     bannerH2.innerHTML = newH2;
+
+    if (n == 1){
+        bannerH1.style = 'font-size:40px'
+    }else if(n == 2){
+        bannerH1.style = 'font-size:30px';
+    } else if( n == 3){
+        bannerH1.style = 'font-size:30px';
+    }else{
+        bannerH1.style = 'font-size:40px'
+    }
 }
 
 // Função para restaurar o banner inicial
@@ -33,6 +43,7 @@ function resetBanner() {
 menuLinks.forEach(link => {
     link.addEventListener("mouseover", () => {
         const newImage = link.getAttribute("data-image");
+        const n = link.getAttribute("n");
         const newH1 = link.getAttribute("data-h1");
         const newH2 = link.getAttribute("data-h2");
 
@@ -40,7 +51,7 @@ menuLinks.forEach(link => {
         clearTimeout(timeout);
 
         // Altera o banner
-        changeBanner(newImage, newH1, newH2);
+        changeBanner(newImage, newH1, newH2, n);
     });
 
     link.addEventListener("mouseout", () => {

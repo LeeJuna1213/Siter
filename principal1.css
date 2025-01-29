@@ -1,8 +1,11 @@
+@import url('font.css');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-family: '';
 }
 
 .banner0 img {
@@ -59,12 +62,13 @@
 
 .texto h2 {
   position: absolute;
+  font-family: 'bison';
   top: 120px;
   right: 450px;
   color: #FFFF00;
   font-family: Bison;
   font-size: 64px;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
   opacity: 0;
   animation: slideIn 2s ease-in-out forwards;
@@ -89,7 +93,7 @@
   top: 200px;
   right: 200px;
   color: #FFFF00;
-  font-family: New Style;
+  font-family: 'new style';
   font-size: 100px;
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: #000;
